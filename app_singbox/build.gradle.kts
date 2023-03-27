@@ -8,7 +8,7 @@ setupAll()
 android {
     defaultConfig {
         applicationId = "moe.matsuri.plugin.singbox"
-        versionCode = 6
-        versionName = "v1.2.0"
+        versionCode = 7
+        versionName = "v1.2.1"
     }
 }
