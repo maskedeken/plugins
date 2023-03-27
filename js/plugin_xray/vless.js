@@ -137,6 +137,9 @@ class vlessClass {
                     if (this.sharedStorage.serverFlowVision.isNotBlank()) {
                         builder.searchParams.set("flow", this.sharedStorage.serverFlowVision)
                     }
+                    if (this.sharedStorage.utlsFingerprint.isNotBlank()) {
+                        builder.searchParams.set("fp", this.sharedStorage.utlsFingerprint)
+                    }
                     break
                 }
                 case "reality": {
@@ -147,13 +150,16 @@ class vlessClass {
                         builder.searchParams.set("flow", this.sharedStorage.serverFlow)
                     }
                     if (this.sharedStorage.publicKey.isNotBlank()) {
-                        builder.searchParams.set("publicKey", this.sharedStorage.publicKey)
+                        builder.searchParams.set("pbk", this.sharedStorage.publicKey)
                     }
                     if (this.sharedStorage.shortId.isNotBlank()) {
-                        builder.searchParams.set("shortId", this.sharedStorage.shortId)
+                        builder.searchParams.set("sid", this.sharedStorage.shortId)
                     }
                     if (this.sharedStorage.spiderX.isNotBlank()) {
-                        builder.searchParams.set("spiderX", this.sharedStorage.spiderX)
+                        builder.searchParams.set("spx", this.sharedStorage.spiderX)
+                    }
+                    if (this.sharedStorage.utlsFingerprint.isNotBlank()) {
+                        builder.searchParams.set("fp", this.sharedStorage.utlsFingerprint)
                     }
                     break
                 }
@@ -486,13 +492,13 @@ class vlessClass {
                 util.ifNotNull(url.searchParams.get("flow"), (it) => {
                     this.sharedStorage.serverFlow = it
                 })
-                util.ifNotNull(url.searchParams.get("publicKey"), (it) => {
+                util.ifNotNull(url.searchParams.get("pbk"), (it) => {
                     this.sharedStorage.publicKey = it
                 })
-                util.ifNotNull(url.searchParams.get("shortId"), (it) => {
+                util.ifNotNull(url.searchParams.get("sid"), (it) => {
                     this.sharedStorage.shortId = it
                 })
-                util.ifNotNull(url.searchParams.get("spiderX"), (it) => {
+                util.ifNotNull(url.searchParams.get("spx"), (it) => {
                     this.sharedStorage.spiderX = it
                 })
                 break
