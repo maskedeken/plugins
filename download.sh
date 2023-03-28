@@ -64,13 +64,11 @@ download_brook() {
 }
 
 download_hysteria() {
-  VERSION="v1.3.4-1"
+  VERSION="v1.3.4"
   mkdir_libs "app_hysteria/libs"
 
-  dl_and_chmod arm64-v8a/libhysteria.so "https://github.com/MatsuriDayo/hysteria/releases/download/$VERSION/hysteria-linux-arm64"
-  dl_and_chmod armeabi-v7a/libhysteria.so "https://github.com/MatsuriDayo/hysteria/releases/download/$VERSION/hysteria-linux-arm"
-  dl_and_chmod x86/libhysteria.so "https://github.com/MatsuriDayo/hysteria/releases/download/$VERSION/hysteria-linux-386"
-  dl_and_chmod x86_64/libhysteria.so "https://github.com/MatsuriDayo/hysteria/releases/download/$VERSION/hysteria-linux-amd64"
+  dl_and_chmod arm64-v8a/libhysteria.so "https://github.com/maskedeken/hysteria/releases/download/$VERSION/hysteria-android-arm64"
+  dl_and_chmod armeabi-v7a/libhysteria.so "https://github.com/maskedeken/hysteria/releases/download/$VERSION/hysteria-android-arm"
 }
 
 download_tuic() {
