@@ -23,6 +23,8 @@ class shadowTlsClass {
     this.defaultSharedStorage.shadowTlsVersion = "2";
     this.defaultSharedStorage.utlsEnabled = "false";
     this.defaultSharedStorage.utlsFingerprint = "chrome";
+    // UDP over TCP
+    this.defaultSharedStorage.serverUoT = false
 
     for (var k in this.defaultSharedStorage) {
       let v = this.defaultSharedStorage[k];
@@ -130,7 +132,12 @@ class shadowTlsClass {
                 "android": "android",
                 "random": "random",
             }
-        },
+          },
+          {
+            type: "SwitchPreference",
+            key: "serverUoT",
+            icon: "baseline_wrap_text_24",
+          },
         ],
       },
     ];
@@ -230,6 +237,7 @@ class shadowTlsClass {
             method: ss.serverMethod,
             password: ss.serverPassword,
             detour: "shadowtls-out",
+            udp_over_tcp: ss.serverUoT,
             multiplex: {
               enabled: true,
               max_connections: 4,
