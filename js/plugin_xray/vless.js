@@ -482,6 +482,9 @@ class vlessClass {
                 util.ifNotNull(url.searchParams.get("flow"), (it) => {
                     this.sharedStorage.serverFlowVision = it
                 })
+                util.ifNotNull(url.searchParams.get("fp"), (it) => {
+                    this.sharedStorage.utlsFingerprint = it
+                })
                 break
             }
             case "reality": {
@@ -500,6 +503,9 @@ class vlessClass {
                 })
                 util.ifNotNull(url.searchParams.get("spx"), (it) => {
                     this.sharedStorage.spiderX = it
+                })
+                util.ifNotNull(url.searchParams.get("fp"), (it) => {
+                    this.sharedStorage.utlsFingerprint = it
                 })
                 break
             }
