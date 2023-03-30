@@ -39,14 +39,8 @@ download_xray() {
 download_singbox() {
   VERSION="1.2.1"
   mkdir_libs "app_singbox/libs"
-  curl -Lso singbox.tar.gz "https://github.com/SagerNet/sing-box/releases/download/v$VERSION/sing-box-$VERSION-android-arm64.tar.gz"
-  unzip_singbox arm64-v8a
-  curl -Lso singbox.tar.gz "https://github.com/SagerNet/sing-box/releases/download/v$VERSION/sing-box-$VERSION-android-armv7.tar.gz"
-  unzip_singbox armeabi-v7a
-  curl -Lso singbox.tar.gz "https://github.com/SagerNet/sing-box/releases/download/v$VERSION/sing-box-$VERSION-android-386.tar.gz"
-  unzip_singbox x86
-  curl -Lso singbox.tar.gz "https://github.com/SagerNet/sing-box/releases/download/v$VERSION/sing-box-$VERSION-android-amd64.tar.gz"
-  unzip_singbox x86_64
+  dl_and_chmod arm64-v8a/libsingbox.so "https://github.com/maskedeken/sing-box/releases/download/$VERSION/sing-box-android-arm64"
+  dl_and_chmod armeabi-v7a/libsingbox.so "https://github.com/maskedeken/sing-box/releases/download/$VERSION/sing-box-android-arm"
 }
 
 dl_and_chmod() {
