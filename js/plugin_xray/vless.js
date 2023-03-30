@@ -146,8 +146,8 @@ class vlessClass {
                     if (this.sharedStorage.serverSNI.isNotBlank()) {
                         builder.searchParams.set("sni", this.sharedStorage.serverSNI)
                     }
-                    if (this.sharedStorage.serverFlow.isNotBlank()) {
-                        builder.searchParams.set("flow", this.sharedStorage.serverFlow)
+                    if (this.sharedStorage.serverFlowVision.isNotBlank()) {
+                        builder.searchParams.set("flow", this.sharedStorage.serverFlowVision)
                     }
                     if (this.sharedStorage.publicKey.isNotBlank()) {
                         builder.searchParams.set("pbk", this.sharedStorage.publicKey)
@@ -490,7 +490,7 @@ class vlessClass {
                     this.sharedStorage.serverSNI = it
                 })
                 util.ifNotNull(url.searchParams.get("flow"), (it) => {
-                    this.sharedStorage.serverFlow = it
+                    this.sharedStorage.serverFlowVision = it
                 })
                 util.ifNotNull(url.searchParams.get("pbk"), (it) => {
                     this.sharedStorage.publicKey = it
