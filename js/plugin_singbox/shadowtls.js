@@ -238,11 +238,6 @@ class shadowTlsClass {
             password: ss.serverPassword,
             detour: "shadowtls-out",
             udp_over_tcp: ss.serverUoT,
-            multiplex: {
-              enabled: true,
-              max_connections: 4,
-              min_streams: 4,
-            },
           },
           {
             type: "shadowtls",
