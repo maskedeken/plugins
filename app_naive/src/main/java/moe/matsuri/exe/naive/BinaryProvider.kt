@@ -1,4 +1,4 @@
-package moe.matsuri.plugin.naive
+package moe.matsuri.exe.naive
 
 import android.net.Uri
 import android.os.ParcelFileDescriptor

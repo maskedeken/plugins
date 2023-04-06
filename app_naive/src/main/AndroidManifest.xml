@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="moe.matsuri.plugin.naive"
+    package="moe.matsuri.exe.naive"
     android:installLocation="internalOnly">
 
     <application
@@ -11,7 +11,7 @@
         android:label="Naïve Plugin">
         <provider
             android:name=".BinaryProvider"
-            android:authorities="moe.matsuri.plugin.naive.BinaryProvider"
+            android:authorities="moe.matsuri.exe.naive.BinaryProvider"
             android:directBootAware="true"
             android:exported="true"
             tools:ignore="ExportedContentProvider">
