@@ -22,6 +22,14 @@ unzip_singbox() {
   rm -rf tmp singbox.tar.gz
 }
 
+unzip_naive() {
+  rm -rf tmp
+  mkdir tmp
+  tar -xvf naiveproxy.tar.xz -C tmp
+  mv tmp/*/naive "$1"/libnaive.so
+  rm -rf tmp naiveproxy.tar.xz
+}
+
 download_xray() {
   VERSION="v1.8.0"
   mkdir_libs "app_xray/libs"
@@ -41,6 +49,16 @@ download_singbox() {
   mkdir_libs "app_singbox/libs"
   dl_and_chmod arm64-v8a/libsingbox.so "https://github.com/maskedeken/sing-box/releases/download/v$VERSION/sing-box-android-arm64"
   dl_and_chmod armeabi-v7a/libsingbox.so "https://github.com/maskedeken/sing-box/releases/download/v$VERSION/sing-box-android-arm"
+}
+
+download_naive() {
+  VERSION="112.0.5615.49-1"
+  mkdir_libs "app_naive/libs"
+
+  curl -Lso naiveproxy.tar.xz "https://github.com/klzgrad/naiveproxy/releases/download/v$VERSION/naiveproxy-v$VERSION-android-arm64.tar.xz"
+  unzip_naive arm64-v8a
+  curl -Lso naiveproxy.tar.xz "https://github.com/klzgrad/naiveproxy/releases/download/v$VERSION/naiveproxy-v$VERSION-android-arm.tar.xz"
+  unzip_naive armeabi-v7a
 }
 
 dl_and_chmod() {
