@@ -9,13 +9,13 @@ import java.io.FileNotFoundException
 
 class BinaryProvider : NativePluginProvider() {
     override fun populateFiles(provider: PathProvider) {
-        provider.addPath("moe.matsuri.plugin.naive", 0b111101101)
+        provider.addPath("naive-plugin", 0b111101101)
     }
 
     override fun getExecutable() = context!!.applicationInfo.nativeLibraryDir + "/libnaive.so"
 
     override fun openFile(uri: Uri): ParcelFileDescriptor = when (uri.path) {
-        "/moe.matsuri.plugin.naive" -> ParcelFileDescriptor.open(
+        "/naive-plugin" -> ParcelFileDescriptor.open(
             File(getExecutable()),
             ParcelFileDescriptor.MODE_READ_ONLY
         )

@@ -22,13 +22,13 @@
                 <action android:name="io.nekohasekai.sagernet.plugin.ACTION_NATIVE_PLUGIN" />
                 <data
                     android:host="moe.matsuri.lite"
-                    android:path="/moe.matsuri.plugin.naive"
+                    android:path="/naive-plugin"
                     android:scheme="plugin" />
             </intent-filter>
 
             <meta-data
                 android:name="io.nekohasekai.sagernet.plugin.id"
-                android:value="moe.matsuri.plugin.naive" />
+                android:value="naive-plugin" />
             <meta-data
                 android:name="io.nekohasekai.sagernet.plugin.executable_path"
                 android:value="libnaive.so" />
