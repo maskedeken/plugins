@@ -7,7 +7,7 @@ setupAll()
 
 android {
     defaultConfig {
-        applicationId = "moe.matsuri.plugin.naive"
+        applicationId = "moe.matsuri.exe.naive"
         versionCode = 1
         versionName = "112.0.5615.49-1"
         splits.abi {
