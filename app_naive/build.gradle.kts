@@ -8,8 +8,8 @@ setupAll()
 android {
     defaultConfig {
         applicationId = "moe.matsuri.exe.naive"
-        versionCode = 1
-        versionName = "112.0.5615.49-1"
+        versionCode = 2
+        versionName = "112.0.5615.49-2"
         splits.abi {
             reset()
             include("arm64-v8a", "armeabi-v7a")
