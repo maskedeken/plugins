@@ -166,6 +166,13 @@ export var translates = {
     spiderX: {
         "": "SpiderX",
     },
+    reducedIvHeadEntropy: {
+        "": "ReducedIvHeadEntropy",
+    },
+    reducedIvHeadEntropy_summary: {
+        "zh_CN": "这是 GFWReport 针对 GFW 上观察到的类似随机流的协议阻塞行为提出的对策。  这个选项将 IV 的前 6 个字节重新映射为可打印的字符，启用后，特权网络路径上的任何人都有可能识别该协议。",
+        "": "This is GFWReport's proposal for a countermeasure for the random stream like protocol blocking behaviour observed on GFW.   This option remap the first 6 bytes of IV to printable characters, it's possible for anyone on the privileged network path to identify the protocol when enabled.",
+    },
 
     // Brook
     serverProtocol: {

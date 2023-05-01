@@ -20,6 +20,8 @@ class ss2022Class {
         this.defaultSharedStorage.serverPassword = ""
         // UDP over TCP
         this.defaultSharedStorage.serverUoT = false
+        // reduce IV header entropy
+        this.defaultSharedStorage.reducedIvHeadEntropy = false
 
         for (var k in this.defaultSharedStorage) {
             let v = this.defaultSharedStorage[k]
@@ -82,6 +84,12 @@ class ss2022Class {
                         "type": "SwitchPreference",
                         "key": "serverUoT",
                         "icon": "baseline_wrap_text_24",
+                    },
+                    {
+                        "type": "SwitchPreference",
+                        "icon": "ic_baseline_grid_3x3_24",
+                        "key": "reducedIvHeadEntropy",
+                        "summary": TR("reducedIvHeadEntropy_summary")
                     },
                 ]
             }
@@ -150,6 +158,7 @@ class ss2022Class {
                                     "method": ss.serverMethod,
                                     "password": ss.serverPassword,
                                     "uot": ss.serverUoT,
+                                    "reducedIvHeadEntropy": ss.reducedIvHeadEntropy,
                                 }
                             ]
                         }
