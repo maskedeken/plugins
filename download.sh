@@ -48,7 +48,7 @@ download_singbox() {
 }
 
 download_naive() {
-  VERSION="112.0.5615.49-1"
+  VERSION="113.0.5672.62-1"
   mkdir_libs "app_naive/libs"
 
   curl -Lso naiveproxy.tar.xz "https://github.com/klzgrad/naiveproxy/releases/download/v$VERSION/naiveproxy-v$VERSION-android-arm64.tar.xz"
