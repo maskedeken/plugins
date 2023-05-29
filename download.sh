@@ -57,9 +57,9 @@ download_naive() {
   unzip_naive armeabi-v7a
 }
 
-download_trojan_go() {
+download_trojan-go() {
   VERSION="0.10.11"
-  mkdir_libs "app_trojan_go/libs"
+  mkdir_libs "app_trojan-go/libs"
   dl_and_chmod arm64-v8a/libtrojan-go.so "https://github.com/maskedeken/trojan-go/releases/download/v$VERSION/trojan-go-android-arm64"
   dl_and_chmod armeabi-v7a/libtrojan-go.so "https://github.com/maskedeken/trojan-go/releases/download/v$VERSION/trojan-go-android-arm"
 }
