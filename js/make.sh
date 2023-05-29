@@ -4,6 +4,7 @@ set -e
 [ $1 == "hysteria" ] && exit
 [ $1 == "tuic" ] && exit
 [ $1 == "naive" ] && exit
+[ $1 == "trojan_go" ] && exit
 
 HTML=../app_$1/html
 SRC=./plugin_$1
