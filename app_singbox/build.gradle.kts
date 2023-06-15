@@ -8,8 +8,8 @@ setupAll()
 android {
     defaultConfig {
         applicationId = "moe.matsuri.plugin.singbox"
-        versionCode = 14
-        versionName = "v1.2.7"
+        versionCode = 15
+        versionName = "v1.3-beta14"
         splits.abi {
             reset()
             include("arm64-v8a", "armeabi-v7a")
