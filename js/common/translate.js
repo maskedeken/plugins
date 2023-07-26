@@ -224,4 +224,7 @@ export var translates = {
     wireguardMTU: {
         "": "MTU",
     },
+    wireguardDNS: {
+        "": "DNS",
+    },
 }

@@ -21,6 +21,7 @@ class wireguardClass {
     this.defaultSharedStorage.wireguardCertificates = "";
     this.defaultSharedStorage.wireguardPeerPreSharedKey = "";
     this.defaultSharedStorage.wireguardMTU = "1420";
+    this.defaultSharedStorage.wireguardDNS = "";
 
     for (var k in this.defaultSharedStorage) {
       let v = this.defaultSharedStorage[k];
@@ -87,6 +88,11 @@ class wireguardClass {
             type: "EditTextPreference",
             key: "wireguardMTU",
             icon: "baseline_public_24",
+          },
+          {
+            type: "EditTextPreference",
+            key: "wireguardDNS",
+            icon: "ic_action_dns",
           },
         ],
       },
@@ -162,6 +168,15 @@ class wireguardClass {
           },
         ],
       };
+      if (!wg.wireguardDNS.isBlank()) {
+        t0.dns = {
+          servers: [
+            {
+              address: wg.wireguardDNS,
+            },
+          ]
+        }
+      }
 
       let v = {};
       v.nekoCommands = ["%exe%", "run", "--config", "config.json"];
