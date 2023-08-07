@@ -58,7 +58,7 @@ download_naive() {
 }
 
 download_trojan-go() {
-  VERSION="0.10.12"
+  VERSION="0.10.13"
   mkdir_libs "app_trojan-go/libs"
   dl_and_chmod arm64-v8a/libtrojan-go.so "https://github.com/maskedeken/trojan-go/releases/download/v$VERSION/trojan-go-android-arm64"
   dl_and_chmod armeabi-v7a/libtrojan-go.so "https://github.com/maskedeken/trojan-go/releases/download/v$VERSION/trojan-go-android-arm"
