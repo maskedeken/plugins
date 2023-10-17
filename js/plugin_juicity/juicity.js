@@ -195,14 +195,13 @@ class juicityClass {
 
             let configObject = {
                 "listen": "127.0.0.1:" + args.port,
-                "server": util.wrapUri(ss.serverAddress, ss.serverPort),
+                "server": util.wrapUri(args.finalAddress, args.finalPort),
                 "uuid": ss.uuid,
                 "password": ss.password,
                 "sni": ss.sni,
                 "allow_insecure": ss.allowInsecure,
                 "congestion_control": ss.congestionControl,
-                "log_level": "info",
-                "protect_path": "protect_path"
+                "log_level": "info"
             };
 
             let v = {};
