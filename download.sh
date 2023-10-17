@@ -9,17 +9,24 @@ mkdir_libs() {
 
 unzip_xray() {
   rm -rf tmp
-  unzip -d tmp xray.zip
+  unzip -d tmp tmp.zip
   mv tmp/xray "$1"/libxray.so
-  rm -rf tmp xray.zip
+  rm -rf tmp tmp.zip
 }
 
 unzip_singbox() {
   rm -rf tmp
   mkdir tmp
-  tar -zxvf singbox.tar.gz -C tmp
+  tar -zxvf tmp.tar.gz -C tmp
   mv tmp/*/sing-box "$1"/libsingbox.so
-  rm -rf tmp singbox.tar.gz
+  rm -rf tmp tmp.tar.gz
+}
+
+unzip_juicity() {
+  rm -rf tmp
+  unzip -d tmp tmp.zip
+  mv tmp/juicity-client "$1"/libjuicity.so
+  rm -rf tmp tmp.zip
 }
 
 unzip_naive() {
@@ -103,6 +110,14 @@ download_tuic5() {
   dl_and_chmod armeabi-v7a/libtuic.so "https://github.com/MatsuriDayo/tuic/releases/download/rel/tuic-client-"$VERSION"-armv7-linux-androideabi"
   dl_and_chmod x86/libtuic.so "https://github.com/MatsuriDayo/tuic/releases/download/rel/tuic-client-"$VERSION"-i686-linux-android"
   dl_and_chmod x86_64/libtuic.so "https://github.com/MatsuriDayo/tuic/releases/download/rel/tuic-client-"$VERSION"-x86_64-linux-android"
+}
+
+download_juicity() {
+  VERSION="v0.3.0"
+  mkdir_libs "app_juicity/libs"
+
+  curl -Lso tmp.zip "https://github.com/juicity/juicity/releases/download/"$VERSION"/juicity-android-arm64.zip"
+  unzip_juicity arm64-v8a
 }
 
 download_"$1"
