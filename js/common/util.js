@@ -29,7 +29,7 @@ class utilClass {
     }
 
     isPureIp(str) {
-        return isIpv4(str) || isIpv6(str);
+        return this.isIpv4(str) || this.isIpv6(str);
     }
 
     isIpv4(str) {
