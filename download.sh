@@ -38,7 +38,7 @@ unzip_naive() {
 }
 
 download_xray() {
-  VERSION="v1.8.3-2"
+  VERSION="v1.8.4"
   mkdir_libs "app_xray/libs"
 
   dl_and_chmod arm64-v8a/libxray.so "https://github.com/maskedeken/Xray-core/releases/download/$VERSION/xray-android-arm64"
