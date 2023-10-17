@@ -28,6 +28,15 @@ class utilClass {
         return !this.isBlank(str);
     }
 
+    isPureIp(str) {
+        return isIpv4(str) || isIpv6(str);
+    }
+
+    isIpv4(str) {
+        const regexExp = /^([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/;
+        return regexExp.test(str);
+    }
+
     isIpv6(str) {
         const regexExp = /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))/gi;
         return regexExp.test(str);
@@ -91,7 +100,9 @@ Object.prototype.global_export = function (name, f) {
 String.prototype.contains = function (s) { return this.indexOf(s) >= 0 }
 String.prototype.isBlank = function () { return util.isBlank(this) }
 String.prototype.isNotBlank = function () { return util.isNotBlank(this) }
+String.prototype.isIpv4 = function () { return util.isIpv4(this) }
 String.prototype.isIpv6 = function () { return util.isIpv6(this) }
+String.prototype.isPureIp = function () { return util.isPureIp(this) }
 String.prototype.substringBefore = function (s) {
     if (!this.contains(s)) return this
     return this.substring(0, this.indexOf(s))

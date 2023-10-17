@@ -198,11 +198,15 @@ class juicityClass {
                 "server": util.wrapUri(args.finalAddress, args.finalPort),
                 "uuid": ss.uuid,
                 "password": ss.password,
-                "sni": ss.sni,
                 "allow_insecure": ss.allowInsecure,
                 "congestion_control": ss.congestionControl,
                 "log_level": "info"
             };
+            if (ss.sni.isNotBlank()) {
+                configObject["sni"] = ss.sni
+            } else if (!ss.serverAddress.isPureIp()) {
+                configObject["sni"] = ss.serverAddress
+            }
 
             let v = {};
             v.nekoCommands = ["%exe%", "run", "-c", "config.json"];
