@@ -10,9 +10,5 @@ android {
         applicationId = "moe.matsuri.plugin.juicity"
         versionCode = 2
         versionName = "v0.3.0"
-        splits.abi {
-            reset()
-            include("arm64-v8a")
-        }
     }
 }

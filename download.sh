@@ -116,8 +116,10 @@ download_juicity() {
   VERSION="v0.3.0"
   mkdir_libs "app_juicity/libs"
 
-  curl -Lso tmp.zip "https://github.com/juicity/juicity/releases/download/"$VERSION"/juicity-android-arm64.zip"
-  unzip_juicity arm64-v8a
+  dl_and_chmod arm64-v8a/libjuicity.so "https://github.com/maskedeken/juicity/releases/download/"$VERSION"/juicity-client-android-arm64"
+  dl_and_chmod armeabi-v7a/libjuicity.so "https://github.com/maskedeken/juicity/releases/download/"$VERSION"/juicity-client-android-arm"
+  dl_and_chmod x86/libjuicity.so "https://github.com/maskedeken/juicity/releases/download/"$VERSION"/juicity-client-android-x86"
+  dl_and_chmod x86_64/libjuicity.so "https://github.com/maskedeken/juicity/releases/download/"$VERSION"/juicity-client-android-x64"
 }
 
 download_"$1"
