@@ -21,7 +21,7 @@ export function nekoInit(b64Str) {
         haveStandardLink: true,
         canShare: true,
         canMux: false,
-        canMapping: true,
+        canMapping: false,
         canTCPing: false,
         canICMPing: true,
         needBypassRootUid: false,

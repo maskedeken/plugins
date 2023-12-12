@@ -195,18 +195,15 @@ class juicityClass {
 
             let configObject = {
                 "listen": "127.0.0.1:" + args.port,
-                "server": util.wrapUri(args.finalAddress, args.finalPort),
+                "server": util.wrapUri(ss.serverAddress, ss.serverPort),
                 "uuid": ss.uuid,
                 "password": ss.password,
+                "sni": ss.sni,
                 "allow_insecure": ss.allowInsecure,
                 "congestion_control": ss.congestionControl,
-                "log_level": "info"
+                "log_level": "info",
+                "protect_path": "protect_path"
             };
-            if (ss.sni.isNotBlank()) {
-                configObject["sni"] = ss.sni
-            } else if (!ss.serverAddress.isPureIp()) {
-                configObject["sni"] = ss.serverAddress
-            }
 
             let v = {};
             v.nekoCommands = ["%exe%", "run", "-c", "config.json"];
