@@ -8,7 +8,7 @@ setupAll()
 android {
     defaultConfig {
         applicationId = "moe.matsuri.plugin.juicity"
-        versionCode = 3
-        versionName = "v0.3.0-1"
+        versionCode = 4
+        versionName = "v0.4.0"
     }
 }
