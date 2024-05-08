@@ -113,7 +113,7 @@ download_tuic5() {
 }
 
 download_juicity() {
-  VERSION="v0.4.0"
+  VERSION="v0.4.2"
   mkdir_libs "app_juicity/libs"
 
   dl_and_chmod arm64-v8a/libjuicity.so "https://github.com/maskedeken/juicity/releases/download/"$VERSION"/juicity-client-android-arm64"
